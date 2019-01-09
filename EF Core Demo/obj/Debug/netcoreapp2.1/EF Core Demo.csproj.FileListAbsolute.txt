@@ -1,0 +1,11 @@
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.deps.json
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.runtimeconfig.json
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.runtimeconfig.dev.json
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.dll
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.csprojAssemblyReference.cache
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.csproj.CoreCompileInputs.cache
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.AssemblyInfoInputs.cache
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.AssemblyInfo.cs
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.pdb
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.dll
+K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.pdb
