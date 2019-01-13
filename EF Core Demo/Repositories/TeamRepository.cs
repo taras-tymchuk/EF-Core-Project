@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace EF_Core_Demo.Repositories
 {
-    public class TeamRepository : Repository<Team>, ITeamRepository
+    public class TeamRepository : Repository<Team, FootballContext>, ITeamRepository
     {
-        public TeamRepository(DbContext context)
+        public TeamRepository(FootballContext context)
             : base(context)
         {
         }
 
         public IEnumerable<Team> GetListOfPlayers( string teamName )
         {
-            return ( (FootballContext) Context ).Teams
+            return Context.Teams
                 .Where( t => t.Name == teamName )
                 .Include(t => t.Players)
                 .ToList();
@@ -23,7 +23,7 @@ namespace EF_Core_Demo.Repositories
 
         public IEnumerable<Team> GetTopRichestTeams( int count )
         {
-            return ( (FootballContext) Context ).Teams
+            return Context.Teams
                 .OrderByDescending( t => t.Budget )
                 .Take( count );
         }

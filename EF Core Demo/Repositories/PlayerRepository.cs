@@ -6,16 +6,17 @@ using System.Linq;
 
 namespace EF_Core_Demo.Repositories
 {
-    public class PlayerRepository : Repository<Player>, IPlayerRepository
+    public class PlayerRepository 
+        : Repository<Player, FootballContext>, IPlayerRepository
     {
-        public PlayerRepository(DbContext context)
+        public PlayerRepository(FootballContext context)
             : base(context)
         {
         }
 
         public IEnumerable<Player> GetPlayersFromBarcelonaTeam()
         {
-            return ( (FootballContext) Context ).Players
+            return Context.Players
                 .Include( p => p.Team )
                 .Where( t => t.Team.Name == "Barcelona" )
                 .ToList();
@@ -23,7 +24,7 @@ namespace EF_Core_Demo.Repositories
 
         public IEnumerable<Player> GetUkrainianPlayers()
         {
-            return ( (FootballContext) Context ).Players
+            return Context.Players
                 .Where( p => p.Nationality == "Ukrainian" );
         }
     }

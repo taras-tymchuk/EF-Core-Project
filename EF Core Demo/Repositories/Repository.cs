@@ -6,14 +6,15 @@ using System.Linq.Expressions;
 
 namespace EF_Core_Demo.Repositories
 {
-    public class Repository<TEntity>
+    public class Repository<TEntity, TContext>
         : IRepository<TEntity> where TEntity : class
+                               where TContext : DbContext
     {
         private DbSet<TEntity> _entities;
 
-        protected DbContext Context;
+        protected TContext Context;
 
-        public Repository( DbContext context )
+        public Repository( TContext context )
         {
             Context = context;
             _entities = Context.Set<TEntity>();
