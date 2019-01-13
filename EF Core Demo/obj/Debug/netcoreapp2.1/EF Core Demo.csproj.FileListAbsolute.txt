@@ -9,3 +9,15 @@ K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\De
 K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.pdb
 K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.dll
 K:\books\Programming\IT Academy\trials\EF Core Demo Solution\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.pdb
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.deps.json
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.runtimeconfig.json
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.runtimeconfig.dev.json
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.dll
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.pdb
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.csprojAssemblyReference.cache
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.csproj.CoreCompileInputs.cache
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.AssemblyInfoInputs.cache
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.AssemblyInfo.cs
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.dll
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\obj\Debug\netcoreapp2.1\EF Core Demo.pdb
+C:\Users\Taras\Desktop\EF-Core-Project\EF Core Demo\bin\Debug\netcoreapp2.1\EF Core Demo.dll.config

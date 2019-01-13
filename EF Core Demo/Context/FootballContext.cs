@@ -1,6 +1,7 @@
 ﻿using EF_Core_Demo.Configurations;
 using EF_Core_Demo.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace EF_Core_Demo.Context
 {
@@ -23,8 +24,15 @@ namespace EF_Core_Demo.Context
         protected override void OnConfiguring(
             DbContextOptionsBuilder modelBuilder)
         {
-            modelBuilder.UseSqlServer( 
-                "Server=DESKTOP-I8EO4OE;Database=Football;Trusted_Connection=True" );
+            if ( !modelBuilder.IsConfigured )
+            {
+                string connectionString = ConfigurationManager
+                    .ConnectionStrings["connection_string"]
+                    .ConnectionString;
+                modelBuilder.UseSqlServer( connectionString );
+            }
+            //modelBuilder.UseSqlServer( 
+            //    "Server=DESKTOP-I8EO4OE;Database=Football;Trusted_Connection=True" );
         }
     }
 }
