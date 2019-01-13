@@ -1,8 +1,9 @@
-﻿using EF_Core_Demo.Context;
+﻿using System;
+using EF_Core_Demo.Context;
 using EF_Core_Demo.Models;
-using System;
 using System.Collections.Generic;
 using EF_Core_Demo.Unit_Of_Work;
+using EF_Core_Demo.Constants;
 
 namespace EF_Core_Demo
 {
@@ -14,12 +15,12 @@ namespace EF_Core_Demo
             {
                 Team barca = new Team
                 {
-                    Name = "Barcelona",
+                    Name = Clubs.Barcelona,
                     Budget = 1000000
                 };
                 Team psg = new Team
                 {
-                    Name = "PSG",
+                    Name = Clubs.PSG,
                     Budget = 10000
                 };
 
@@ -28,7 +29,7 @@ namespace EF_Core_Demo
                     FirstName = "Andriy",
                     LastName = "Yarmolenko",
                     Age = 30,
-                    Nationality = "Ukrainian",
+                    Nationality = Nationalities.Ukrainian,
                     Team = barca
                 };
                 Player p2 = new Player
@@ -36,7 +37,7 @@ namespace EF_Core_Demo
                     FirstName = "Lionel",
                     LastName = "Messi",
                     Age = 32,
-                    Nationality = "Argentinean",
+                    Nationality = Nationalities.Argentinean,
                     Team = barca
                 };
                 Player p3 = new Player
@@ -44,7 +45,7 @@ namespace EF_Core_Demo
                     FirstName = "Junior",
                     LastName = "Neymar",
                     Age = 26,
-                    Nationality = "Brazilian",
+                    Nationality = Nationalities.Brazilian,
                     Team = psg
                 };
 
@@ -59,16 +60,17 @@ namespace EF_Core_Demo
                 Console.WriteLine("Ukrainian players:");
                 foreach ( var p in players )
                 {
-                    System.Console.WriteLine( p.FirstName + " " + p.LastName );
+                    System.Console.WriteLine( $"{p.FirstName} {p.LastName}" );
                 }
 
                 Console.WriteLine("\nPlayers of Barelona:");
-                var teams = uow.Teams.GetListOfPlayers( "Barcelona" );
+                var teams = uow.Teams.GetListOfPlayers( Clubs.Barcelona );
                 foreach ( var t in teams )
                 {
                     foreach ( var p in t.Players )
                     {
-                        System.Console.WriteLine( p.FirstName + " " + p.LastName + " is " + p.Age + " years old." );
+                        System.Console.WriteLine( $"{p.FirstName} {p.LastName} " +
+                            $"is {p.Age} years old." );
                     }
                     
                 }
@@ -76,7 +78,7 @@ namespace EF_Core_Demo
 
             using ( var uow = new UnitOfWork( new FootballContext() ) )
             {
-                uow.Teams.RemoveByTeamName( "Barcelona" );
+                uow.Teams.RemoveByTeamName( Clubs.Barcelona );
                 uow.Save();
             }
 
@@ -87,7 +89,7 @@ namespace EF_Core_Demo
                 Console.WriteLine("Teams:");
                 foreach ( var team in teams )
                 {
-                    Console.WriteLine( team.Name + " " + team.Budget );
+                    Console.WriteLine( $"{team.Name} {team.Budget}" );
                 }
 
                 var players = uow.Players.GetAll();
@@ -95,7 +97,7 @@ namespace EF_Core_Demo
                 Console.WriteLine( "Players:" );
                 foreach ( var player in players )
                 {
-                    Console.WriteLine( player.FirstName + " " + player.LastName );
+                    Console.WriteLine( $"{player.FirstName} {player.LastName}" );
                 }
             }
 
