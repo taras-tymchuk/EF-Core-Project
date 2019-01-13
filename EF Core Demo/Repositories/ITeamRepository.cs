@@ -7,6 +7,7 @@ namespace EF_Core_Demo.Repositories
     {
         IEnumerable<Team> GetTopRichestTeams( int count );
         IEnumerable<Team> GetListOfPlayers( string teamName );
+        IEnumerable<Team> GetTeamByName( string teamName );
         void RemoveByTeamName( string teamName );
     }
 }

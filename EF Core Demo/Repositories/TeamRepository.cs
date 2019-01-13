@@ -6,11 +6,18 @@ using System.Linq;
 
 namespace EF_Core_Demo.Repositories
 {
-    public class TeamRepository : Repository<Team, FootballContext>, ITeamRepository
+    public class TeamRepository : 
+        Repository<Team, FootballContext>, ITeamRepository
     {
         public TeamRepository(FootballContext context)
             : base(context)
         {
+        }
+
+        public IEnumerable<Team> GetTeamByName( string teamName )
+        {
+            return Context.Teams
+                .Where( t => t.Name == teamName );
         }
 
         public IEnumerable<Team> GetListOfPlayers( string teamName )

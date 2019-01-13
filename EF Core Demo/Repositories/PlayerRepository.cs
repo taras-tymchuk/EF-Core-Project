@@ -14,6 +14,16 @@ namespace EF_Core_Demo.Repositories
         {
         }
 
+        public IEnumerable<Player> GetPlayerByFullName( 
+            string firstName, string lastName)
+        {
+            var res = Context.Players
+                .Where( p => p.FirstName == firstName && p.LastName == lastName )
+                .Include(p => p.Team);
+            var listRes = res.ToList();
+            return res;
+        }
+
         public IEnumerable<Player> GetPlayersFromBarcelonaTeam()
         {
             return Context.Players

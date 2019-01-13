@@ -7,5 +7,7 @@ namespace EF_Core_Demo.Repositories
     {
         IEnumerable<Player> GetUkrainianPlayers();
         IEnumerable<Player> GetPlayersFromBarcelonaTeam();
+        IEnumerable<Player> GetPlayerByFullName( 
+            string firstName, string lastName);
     }
 }

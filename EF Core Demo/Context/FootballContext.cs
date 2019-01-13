@@ -31,8 +31,6 @@ namespace EF_Core_Demo.Context
                     .ConnectionString;
                 modelBuilder.UseSqlServer( connectionString );
             }
-            //modelBuilder.UseSqlServer( 
-            //    "Server=DESKTOP-I8EO4OE;Database=Football;Trusted_Connection=True" );
         }
     }
 }
