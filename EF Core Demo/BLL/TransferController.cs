@@ -5,33 +5,38 @@ using System.Linq;
 
 namespace EF_Core_Demo.BLL
 {
-    public class Controller
+    public class TransferController
     {
         private UnitOfWork _model;
+        private TransferResult _transferResult;
 
-        public Controller(UnitOfWork model)
+        public TransferController(UnitOfWork model)
         {
             _model = model;
         }
 
-        public void TransferPlayer(
+        public TransferResult TransferPlayer(
             string firstName, string lastName, string newClubName )
         {
+            _transferResult = new TransferResult();
+
             var players = _model.Players.GetPlayerByFullName( firstName, lastName )
                 .ToList();
 
             if ( players.Count == 0 )
             {
-                System.Console.WriteLine("Sorry, there is no player with such name.");
+                _transferResult.errorCode = ErrorCodeEnum.NotFoundPlayer;
             }
             else if ( players.Count > 1 )
             {
-                System.Console.WriteLine("We have clones. Sorry we cannot move all of them.");
+                _transferResult.errorCode = ErrorCodeEnum.DuplicatePlayer;
             }
             else
             {
                 OrganizeTransfer(players[0], newClubName);
             }
+
+            return _transferResult;
         }
 
         private void OrganizeTransfer( Player player, string newClubName )
@@ -41,7 +46,7 @@ namespace EF_Core_Demo.BLL
 
             if ( teams.Count == 0 )
             {
-                System.Console.WriteLine( "There no such team." );
+                _transferResult.errorCode = ErrorCodeEnum.NotFoundTeam;
             }
             else
             {
